@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.altera.sbtgui.launch.modelsim.Nios2ModelsimLaunchConfiguration">
+<stringAttribute key="elfFile" value="C:\4th_Year_1st_Sem\SoC\Lab\Final_Project\software\Final_Project\RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf"/>
+<stringAttribute key="modelSimPath" value="C:\intelFPGA_lite\18.1\modelsim_ase\win32aloem"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_ID" value="com.altera.debug.cdi.gdb.plugin.Nios2GdbCdiDebugger"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_START_MODE" value="run"/>
+<booleanAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN" value="true"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="Final_Project"/>
+<stringAttribute key="spdPath" value="C:\4th_Year_1st_Sem\SoC\Lab\Final_Project\system_tb.spd"/>
+</launchConfiguration>

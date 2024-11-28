@@ -1,0 +1,61 @@
+/*
+ * source.c
+ *
+ *  Created on: 05-11-2024
+ *      Author: PeterPhan
+ */
+
+
+#include <stdio.h>
+#include <altera_avalon_i2c.h>
+//#include "SH1106.h"
+
+//ALT_AVALON_I2C_DEV_t *i2c_dev;
+
+//void I2C0_Init(){
+//	/* Check if LCD connected to I2C */
+//	i2c_dev = alt_avalon_i2c_open("/dev/i2c_0");
+//	if (NULL==i2c_dev)  {
+//		printf("Error: Cannot find /dev/i2c_0\n");
+//		return;
+//	}
+//	printf("Successfully open I2C");
+//}
+
+int main()
+{
+//	I2C0_Init();
+//	SH1106_Init (); // initialise the display
+//	SH1106_GotoXY (12,10); // goto 10, 10
+//	SH1106_Puts ("HELLO", &Font_11x18, 1); // print Hello
+
+	ALT_AVALON_I2C_DEV_t *i2c_dev; //pointer to instance structure
+	alt_u8 txbuffer[0x200];
+	alt_u8 rxbuffer[0x200];
+	int i;
+	ALT_AVALON_I2C_STATUS_CODE status;
+	//get a pointer to the avalon i2c instance
+	i2c_dev = alt_avalon_i2c_open("/dev/i2c_0");
+	if (NULL==i2c_dev)
+	{
+	printf("Error: Cannot find /dev/i2c_0\n");
+	return 1;
+	}
+	//set the address of the device using
+	alt_avalon_i2c_master_target_set(i2c_dev,0x51);
+	//write data to an eeprom at address 0x0200
+	txbuffer[0]=2; txbuffer[1]=0;
+	//The eeprom address which will be sent as first two bytes of data
+	for (i=0;i<0x10;i++) txbuffer[i+2]=i; //some data to write
+	status=alt_avalon_i2c_master_tx(i2c_dev,txbuffer, 0x10+2,
+	ALT_AVALON_I2C_NO_INTERRUPTS);
+	if (status!=ALT_AVALON_I2C_SUCCESS) return 1; //FAIL
+	//read back the data into rxbuffer
+	//This command sends the 2 byte eeprom data address required by the eeprom
+	//Then does a restart and receives the data.
+	status=alt_avalon_i2c_master_tx_rx(i2c_dev, txbuffer, 2, rxbuffer, 0x10,
+	ALT_AVALON_I2C_NO_INTERRUPTS);
+	if (status!=ALT_AVALON_I2C_SUCCESS) return 1; //FAIL
+	return 0;
+	return 1;
+}

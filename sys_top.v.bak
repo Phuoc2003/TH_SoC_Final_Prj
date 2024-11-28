@@ -1,0 +1,14 @@
+module sys_top(
+					input CLOCK_50,
+					input [0:0] KEY,
+					output [3:0] GPIO);
+
+	system NIOS_SYSTEM(
+							 .clk_clk(CLOCK_50),                 //              clk.clk
+							 .reset_reset_n(KEY[0]),    
+							 .i2c_0_i2c_serial_sda_in(GPIO[0]), // i2c_0_i2c_serial.sda_in
+							 .i2c_0_i2c_serial_scl_in(GPIO[1]), //                 .scl_in
+							 .i2c_0_i2c_serial_sda_oe(GPIO[2]), //                 .sda_oe
+							 .i2c_0_i2c_serial_scl_oe(GPIO[3]), //                 .scl_oe
+		 
+endmodule

@@ -1,0 +1,131 @@
+09:40:33 **** Clean-only build of configuration Nios II for project Final_Project ****
+make clean 
+[RUN_ON_HDL_SIMULATOR_ONLY_Final_Project clean complete]
+09:40:42 **** Build of configuration Nios II for project Final_Project ****
+make all 
+Info: Building ../Final_Project_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Final_Project_bsp/
+[BSP build complete]
+Info: Compiling SH1106.c to obj/default/SH1106.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Final_Project_bsp//HAL/inc -I../Final_Project_bsp/ -I../Final_Project_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DALT_SIM_OPTIMIZE -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/SH1106.o SH1106.c
+Info: Compiling fonts.c to obj/default/fonts.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Final_Project_bsp//HAL/inc -I../Final_Project_bsp/ -I../Final_Project_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DALT_SIM_OPTIMIZE -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/fonts.o fonts.c
+Info: Compiling source.c to obj/default/source.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Final_Project_bsp//HAL/inc -I../Final_Project_bsp/ -I../Final_Project_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DALT_SIM_OPTIMIZE -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/source.o source.c
+Info: Linking RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf
+nios2-elf-g++  -T'../Final_Project_bsp//linker.x' -msys-crt0='../Final_Project_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Final_Project_bsp/  -msmallc  -Wl,-Map=RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf obj/default/SH1106.o obj/default/fonts.o obj/default/source.o -lm -msys-lib=m
+obj/default/SH1106.o: In function `SH1106_Init':
+D:\SoC\Lab\Final_Project\Final_Project\software\Final_Project/SH1106.c:44: undefined reference to `i2c_dev'
+obj/default/SH1106.o: In function `SH1106_I2C_WriteMulti':
+D:\SoC\Lab\Final_Project\Final_Project\software\Final_Project/SH1106.c:490: undefined reference to `i2c_dev'
+D:\SoC\Lab\Final_Project\Final_Project\software\Final_Project/SH1106.c:491: undefined reference to `i2c_dev'
+obj/default/SH1106.o: In function `SH1106_I2C_Write':
+D:\SoC\Lab\Final_Project\Final_Project\software\Final_Project/SH1106.c:500: undefined reference to `i2c_dev'
+D:\SoC\Lab\Final_Project\Final_Project\software\Final_Project/SH1106.c:501: undefined reference to `i2c_dev'
+collect2.exe: error: ld returned 1 exit status
+make: *** [RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf] Error 1
+09:41:17 **** Build of configuration Nios II for project Final_Project ****
+make all 
+Info: Building ../Final_Project_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Final_Project_bsp/
+[BSP build complete]
+Info: Compiling SH1106.c to obj/default/SH1106.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Final_Project_bsp//HAL/inc -I../Final_Project_bsp/ -I../Final_Project_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DALT_SIM_OPTIMIZE -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/SH1106.o SH1106.c
+Info: Linking RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf
+nios2-elf-g++  -T'../Final_Project_bsp//linker.x' -msys-crt0='../Final_Project_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Final_Project_bsp/  -msmallc  -Wl,-Map=RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf obj/default/SH1106.o obj/default/fonts.o obj/default/source.o -lm -msys-lib=m
+nios2-elf-insert RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name system --quartus_project_dir "D:/SoC/Lab/Final_Project/Final_Project" --jdi ../..//output_files/top.jdi --sopcinfo D:/SoC/Lab/Final_Project/Final_Project/software/Final_Project_bsp/../../system.sopcinfo
+Info: (RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf) 26 KBytes program size (code + initialized data).
+Info:                                               100 KBytes free for stack + heap.
+Info: Creating RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf >RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.objdump
+[RUN_ON_HDL_SIMULATOR_ONLY_Final_Project build complete]
+09:41:19 **** Incremental Build of configuration Nios II for project Final_Project ****
+make all 
+Info: Building ../Final_Project_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Final_Project_bsp/
+[BSP build complete]
+[RUN_ON_HDL_SIMULATOR_ONLY_Final_Project build complete]
+09:43:24 **** Build of configuration Nios II for project Final_Project ****
+make all 
+Info: Building ../Final_Project_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Final_Project_bsp/
+[BSP build complete]
+Info: Compiling SH1106.c to obj/default/SH1106.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Final_Project_bsp//HAL/inc -I../Final_Project_bsp/ -I../Final_Project_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DALT_SIM_OPTIMIZE -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/SH1106.o SH1106.c
+Info: Compiling source.c to obj/default/source.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Final_Project_bsp//HAL/inc -I../Final_Project_bsp/ -I../Final_Project_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DALT_SIM_OPTIMIZE -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/source.o source.c
+Info: Linking RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf
+nios2-elf-g++  -T'../Final_Project_bsp//linker.x' -msys-crt0='../Final_Project_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Final_Project_bsp/  -msmallc  -Wl,-Map=RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf obj/default/SH1106.o obj/default/fonts.o obj/default/source.o -lm -msys-lib=m
+nios2-elf-insert RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name system --quartus_project_dir "D:/SoC/Lab/Final_Project/Final_Project" --jdi ../..//output_files/top.jdi --sopcinfo D:/SoC/Lab/Final_Project/Final_Project/software/Final_Project_bsp/../../system.sopcinfo
+Info: (RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf) 35 KBytes program size (code + initialized data).
+Info:                                               91 KBytes free for stack + heap.
+Info: Creating RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf >RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.objdump
+[RUN_ON_HDL_SIMULATOR_ONLY_Final_Project build complete]
+09:43:27 **** Incremental Build of configuration Nios II for project Final_Project ****
+make all 
+Info: Building ../Final_Project_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Final_Project_bsp/
+[BSP build complete]
+[RUN_ON_HDL_SIMULATOR_ONLY_Final_Project build complete]
+09:45:54 **** Build of configuration Nios II for project Final_Project ****
+make all 
+Info: Building ../Final_Project_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Final_Project_bsp/
+[BSP build complete]
+Info: Compiling source.c to obj/default/source.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Final_Project_bsp//HAL/inc -I../Final_Project_bsp/ -I../Final_Project_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DALT_SIM_OPTIMIZE -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/source.o source.c
+source.c: In function 'main':
+source.c:30:2: warning: implicit declaration of function 'SH1106_WRITECOMMAND' [-Wimplicit-function-declaration]
+  SH1106_WRITECOMMAND(0xAE);
+  ^
+Info: Linking RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf
+nios2-elf-g++  -T'../Final_Project_bsp//linker.x' -msys-crt0='../Final_Project_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Final_Project_bsp/  -msmallc  -Wl,-Map=RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf obj/default/SH1106.o obj/default/fonts.o obj/default/source.o -lm -msys-lib=m
+obj/default/source.o: In function `main':
+D:\SoC\Lab\Final_Project\Final_Project\software\Final_Project/source.c:30: undefined reference to `SH1106_WRITECOMMAND'
+collect2.exe: error: ld returned 1 exit status
+make: *** [RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf] Error 1
+09:46:23 **** Build of configuration Nios II for project Final_Project ****
+make all 
+Info: Building ../Final_Project_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Final_Project_bsp/
+[BSP build complete]
+Info: Linking RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf
+nios2-elf-g++  -T'../Final_Project_bsp//linker.x' -msys-crt0='../Final_Project_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Final_Project_bsp/  -msmallc  -Wl,-Map=RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf obj/default/SH1106.o obj/default/fonts.o obj/default/source.o -lm -msys-lib=m
+obj/default/source.o: In function `main':
+D:\SoC\Lab\Final_Project\Final_Project\software\Final_Project/source.c:30: undefined reference to `SH1106_WRITECOMMAND'
+collect2.exe: error: ld returned 1 exit status
+make: *** [RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf] Error 1
+09:46:32 **** Build of configuration Nios II for project Final_Project ****
+make all 
+Info: Building ../Final_Project_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Final_Project_bsp/
+[BSP build complete]
+Info: Compiling source.c to obj/default/source.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Final_Project_bsp//HAL/inc -I../Final_Project_bsp/ -I../Final_Project_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DALT_SIM_OPTIMIZE -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/source.o source.c
+Info: Linking RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf
+nios2-elf-g++  -T'../Final_Project_bsp//linker.x' -msys-crt0='../Final_Project_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Final_Project_bsp/  -msmallc  -Wl,-Map=RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf obj/default/SH1106.o obj/default/fonts.o obj/default/source.o -lm -msys-lib=m
+nios2-elf-insert RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name system --quartus_project_dir "D:/SoC/Lab/Final_Project/Final_Project" --jdi ../..//output_files/top.jdi --sopcinfo D:/SoC/Lab/Final_Project/Final_Project/software/Final_Project_bsp/../../system.sopcinfo
+Info: (RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf) 35 KBytes program size (code + initialized data).
+Info:                                               91 KBytes free for stack + heap.
+Info: Creating RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.elf >RUN_ON_HDL_SIMULATOR_ONLY_Final_Project.objdump
+[RUN_ON_HDL_SIMULATOR_ONLY_Final_Project build complete]
+09:46:35 **** Incremental Build of configuration Nios II for project Final_Project ****
+make all 
+Info: Building ../Final_Project_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Final_Project_bsp/
+[BSP build complete]
+[RUN_ON_HDL_SIMULATOR_ONLY_Final_Project build complete]
+09:47:42 **** Build of configuration Nios II for project Final_Project ****
+make all 
+Info: Building ../Final_Project_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Final_Project_bsp/
+[BSP build complete]
+[RUN_ON_HDL_SIMULATOR_ONLY_Final_Project build complete]
+09:47:43 **** Incremental Build of configuration Nios II for project Final_Project ****
+make all 
+Info: Building ../Final_Project_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Final_Project_bsp/
+[BSP build complete]
+[RUN_ON_HDL_SIMULATOR_ONLY_Final_Project build complete]
