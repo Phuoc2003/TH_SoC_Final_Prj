@@ -778,7 +778,7 @@ uint8_t  SH1106_Init(void) {
 //		printf("Successfully open I2C");
 	alt_avalon_i2c_master_target_set(SH1106_I2C,SH1106_I2C_ADDR);
    2025c:	d0a0df17 	ldw	r2,-31876(gp)
-   20260:	01401e04 	movi	r5,120
+   20260:	01400f04 	movi	r5,60
    20264:	1009883a 	mov	r4,r2
    20268:	00235e80 	call	235e8 <alt_avalon_i2c_master_target_set>
 
@@ -806,117 +806,117 @@ uint8_t  SH1106_Init(void) {
 	SH1106_WRITECOMMAND(0xAE); //display off
    2028c:	01802b84 	movi	r6,174
    20290:	000b883a 	mov	r5,zero
-   20294:	01001e04 	movi	r4,120
+   20294:	01000f04 	movi	r4,60
    20298:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0xB0|0x00); //Set Page Start Address for Page Addressing Mode,0-7
    2029c:	01802c04 	movi	r6,176
    202a0:	000b883a 	mov	r5,zero
-   202a4:	01001e04 	movi	r4,120
+   202a4:	01000f04 	movi	r4,60
    202a8:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0x81); //--set contrast control register
    202ac:	01802044 	movi	r6,129
    202b0:	000b883a 	mov	r5,zero
-   202b4:	01001e04 	movi	r4,120
+   202b4:	01000f04 	movi	r4,60
    202b8:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0xFF); // contrast value
    202bc:	01803fc4 	movi	r6,255
    202c0:	000b883a 	mov	r5,zero
-   202c4:	01001e04 	movi	r4,120
+   202c4:	01000f04 	movi	r4,60
    202c8:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0xA1); //--set segment re-map 0 to 127
    202cc:	01802844 	movi	r6,161
    202d0:	000b883a 	mov	r5,zero
-   202d4:	01001e04 	movi	r4,120
+   202d4:	01000f04 	movi	r4,60
    202d8:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0xA6); //--set normal display
    202dc:	01802984 	movi	r6,166
    202e0:	000b883a 	mov	r5,zero
-   202e4:	01001e04 	movi	r4,120
+   202e4:	01000f04 	movi	r4,60
    202e8:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0xA8); //--set multiplex ratio(1 to 64)
    202ec:	01802a04 	movi	r6,168
    202f0:	000b883a 	mov	r5,zero
-   202f4:	01001e04 	movi	r4,120
+   202f4:	01000f04 	movi	r4,60
    202f8:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0x3F); // multiplex value
    202fc:	01800fc4 	movi	r6,63
    20300:	000b883a 	mov	r5,zero
-   20304:	01001e04 	movi	r4,120
+   20304:	01000f04 	movi	r4,60
    20308:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0xAD); // Set Pump Mode
    2030c:	01802b44 	movi	r6,173
    20310:	000b883a 	mov	r5,zero
-   20314:	01001e04 	movi	r4,120
+   20314:	01000f04 	movi	r4,60
    20318:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0x8B); // Pump ON
    2031c:	018022c4 	movi	r6,139
    20320:	000b883a 	mov	r5,zero
-   20324:	01001e04 	movi	r4,120
+   20324:	01000f04 	movi	r4,60
    20328:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0x30|0x02); // Set Pump Voltage 8.0
    2032c:	01800c84 	movi	r6,50
    20330:	000b883a 	mov	r5,zero
-   20334:	01001e04 	movi	r4,120
+   20334:	01000f04 	movi	r4,60
    20338:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0xC8); //Set COM Output Scan Direction
    2033c:	01803204 	movi	r6,200
    20340:	000b883a 	mov	r5,zero
-   20344:	01001e04 	movi	r4,120
+   20344:	01000f04 	movi	r4,60
    20348:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0xD3); //-set display offset
    2034c:	018034c4 	movi	r6,211
    20350:	000b883a 	mov	r5,zero
-   20354:	01001e04 	movi	r4,120
+   20354:	01000f04 	movi	r4,60
    20358:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0x00); //-not offset
    2035c:	000d883a 	mov	r6,zero
    20360:	000b883a 	mov	r5,zero
-   20364:	01001e04 	movi	r4,120
+   20364:	01000f04 	movi	r4,60
    20368:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0xD5); //--set display clock divide ratio/oscillator frequency
    2036c:	01803544 	movi	r6,213
    20370:	000b883a 	mov	r5,zero
-   20374:	01001e04 	movi	r4,120
+   20374:	01000f04 	movi	r4,60
    20378:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0x80); //--set divide ratio
    2037c:	01802004 	movi	r6,128
    20380:	000b883a 	mov	r5,zero
-   20384:	01001e04 	movi	r4,120
+   20384:	01000f04 	movi	r4,60
    20388:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0xD9); //--set pre-charge period
    2038c:	01803644 	movi	r6,217
    20390:	000b883a 	mov	r5,zero
-   20394:	01001e04 	movi	r4,120
+   20394:	01000f04 	movi	r4,60
    20398:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0x1F); //
    2039c:	018007c4 	movi	r6,31
    203a0:	000b883a 	mov	r5,zero
-   203a4:	01001e04 	movi	r4,120
+   203a4:	01000f04 	movi	r4,60
    203a8:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0xDA); //--set com pins hardware configuration
    203ac:	01803684 	movi	r6,218
    203b0:	000b883a 	mov	r5,zero
-   203b4:	01001e04 	movi	r4,120
+   203b4:	01000f04 	movi	r4,60
    203b8:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0x12);
    203bc:	01800484 	movi	r6,18
    203c0:	000b883a 	mov	r5,zero
-   203c4:	01001e04 	movi	r4,120
+   203c4:	01000f04 	movi	r4,60
    203c8:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0xDB); //--set vcomh
    203cc:	018036c4 	movi	r6,219
    203d0:	000b883a 	mov	r5,zero
-   203d4:	01001e04 	movi	r4,120
+   203d4:	01000f04 	movi	r4,60
    203d8:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0x40); //
    203dc:	01801004 	movi	r6,64
    203e0:	000b883a 	mov	r5,zero
-   203e4:	01001e04 	movi	r4,120
+   203e4:	01000f04 	movi	r4,60
    203e8:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0xAF); //--turn on SH1106 panel
    203ec:	01802bc4 	movi	r6,175
    203f0:	000b883a 	mov	r5,zero
-   203f4:	01001e04 	movi	r4,120
+   203f4:	01000f04 	movi	r4,60
    203f8:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 
 
@@ -968,17 +968,17 @@ void SH1106_UpdateScreen(void) {
    20450:	10803fcc 	andi	r2,r2,255
    20454:	100d883a 	mov	r6,r2
    20458:	000b883a 	mov	r5,zero
-   2045c:	01001e04 	movi	r4,120
+   2045c:	01000f04 	movi	r4,60
    20460:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 		SH1106_WRITECOMMAND(0x00);
    20464:	000d883a 	mov	r6,zero
    20468:	000b883a 	mov	r5,zero
-   2046c:	01001e04 	movi	r4,120
+   2046c:	01000f04 	movi	r4,60
    20470:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 		SH1106_WRITECOMMAND(0x10);
    20474:	01800404 	movi	r6,16
    20478:	000b883a 	mov	r5,zero
-   2047c:	01001e04 	movi	r4,120
+   2047c:	01000f04 	movi	r4,60
    20480:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 
 		/* Write multi data */
@@ -991,7 +991,7 @@ void SH1106_UpdateScreen(void) {
    20498:	01c02004 	movi	r7,128
    2049c:	100d883a 	mov	r6,r2
    204a0:	01401004 	movi	r5,64
-   204a4:	01001e04 	movi	r4,120
+   204a4:	01000f04 	movi	r4,60
    204a8:	00219700 	call	21970 <SH1106_I2C_WriteMulti>
 }
 
@@ -2822,17 +2822,17 @@ void SH1106_ON(void) {
 	SH1106_WRITECOMMAND(0x8D);
    218d0:	01802344 	movi	r6,141
    218d4:	000b883a 	mov	r5,zero
-   218d8:	01001e04 	movi	r4,120
+   218d8:	01000f04 	movi	r4,60
    218dc:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0x14);
    218e0:	01800504 	movi	r6,20
    218e4:	000b883a 	mov	r5,zero
-   218e8:	01001e04 	movi	r4,120
+   218e8:	01000f04 	movi	r4,60
    218ec:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0xAF);
    218f0:	01802bc4 	movi	r6,175
    218f4:	000b883a 	mov	r5,zero
-   218f8:	01001e04 	movi	r4,120
+   218f8:	01000f04 	movi	r4,60
    218fc:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 }
    21900:	0001883a 	nop
@@ -2851,17 +2851,17 @@ void SH1106_OFF(void) {
 	SH1106_WRITECOMMAND(0x8D);
    21928:	01802344 	movi	r6,141
    2192c:	000b883a 	mov	r5,zero
-   21930:	01001e04 	movi	r4,120
+   21930:	01000f04 	movi	r4,60
    21934:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0x10);
    21938:	01800404 	movi	r6,16
    2193c:	000b883a 	mov	r5,zero
-   21940:	01001e04 	movi	r4,120
+   21940:	01000f04 	movi	r4,60
    21944:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 	SH1106_WRITECOMMAND(0xAE);
    21948:	01802b84 	movi	r6,174
    2194c:	000b883a 	mov	r5,zero
-   21950:	01001e04 	movi	r4,120
+   21950:	01000f04 	movi	r4,60
    21954:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 }
    21958:	0001883a 	nop
@@ -2998,7 +2998,7 @@ void SH1106_InvertDisplay (int i)
    21acc:	10000526 	beq	r2,zero,21ae4 <SH1106_InvertDisplay+0x30>
    21ad0:	018029c4 	movi	r6,167
    21ad4:	000b883a 	mov	r5,zero
-   21ad8:	01001e04 	movi	r4,120
+   21ad8:	01000f04 	movi	r4,60
    21adc:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 
   else SH1106_WRITECOMMAND (SH1106_NORMALDISPLAY);
@@ -3013,7 +3013,7 @@ void SH1106_InvertDisplay (int i)
   else SH1106_WRITECOMMAND (SH1106_NORMALDISPLAY);
    21ae4:	01802984 	movi	r6,166
    21ae8:	000b883a 	mov	r5,zero
-   21aec:	01001e04 	movi	r4,120
+   21aec:	01000f04 	movi	r4,60
    21af0:	0021a3c0 	call	21a3c <SH1106_I2C_Write>
 
 }
@@ -3260,6 +3260,10 @@ int main()
    21d70:	010000f4 	movhi	r4,3
    21d74:	21216204 	addi	r4,r4,-31352
    21d78:	00208fc0 	call	208fc <SH1106_Puts>
+
+//	ALT_AVALON_I2C_DEV_t *i2c_dev; //pointer to instance structure
+
+
 	return 1;
    21d7c:	00800044 	movi	r2,1
 }

@@ -1,18 +1,22 @@
 module sys_top(
-					input CLOCK_50,
-					input [0:0] KEY,
-					inout FPGA_I2C_SCLK,
-					inout FPGA_I2C_SDAT);
+					CLOCK_50,
+					KEY,
+					GPIO
+				  );
 
+	input CLOCK_50;
+	input [0:0] KEY;
+	inout [1:0] GPIO;
+	
 	wire scl_in;
 	wire sda_in;
 	wire scl_oe;
 	wire sda_oe;
-	
-	assign scl_in = FPGA_I2C_SCLK;
-	assign sda_in = FPGA_I2C_SDAT;
-	assign FPGA_I2C_SCLK = scl_oe ? 1'b0 : 1'bz;
-	assign FPGA_I2C_SDAT = sda_oe ? 1'b0 : 1'bz;
+
+	assign scl_in = GPIO[0]; //scl
+	assign sda_in = GPIO[1]; //sda
+	assign GPIO[0] = scl_oe ? 1'b0 : 1'bz;
+	assign GPIO[1] = sda_oe ? 1'b0 : 1'bz;
 					
 	system NIOS_SYSTEM(
 							 .clk_clk(CLOCK_50),                 //              clk.clk

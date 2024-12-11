@@ -27,5 +27,9 @@ int main()
 	SH1106_Init (); // initialise the display
 	SH1106_GotoXY (12,10); // goto 10, 10
 	SH1106_Puts ("HELLO", &Font_11x18, 1); // print Hello
+
+//	ALT_AVALON_I2C_DEV_t *i2c_dev; //pointer to instance structure
+
+
 	return 1;
 }
