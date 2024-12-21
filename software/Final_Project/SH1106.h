@@ -21,6 +21,9 @@
 //#define SH1106_I2C_ADDR         0x01
 #endif
 
+extern ALT_AVALON_I2C_DEV_t *i2c_dev;
+#define SH1106_I2C i2c_dev
+
 /* SH1106 settings */
 /* SH1106 width in pixels */
 #ifndef SH1106_WIDTH

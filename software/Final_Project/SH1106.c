@@ -6,9 +6,6 @@
  */
 #include "SH1106.h"
 
-extern ALT_AVALON_I2C_DEV_t *i2c_dev;
-#define SH1106_I2C i2c_dev
-
 /* Write command */
 #define SH1106_WRITECOMMAND(command)      SH1106_I2C_Write(SH1106_I2C_ADDR, 0x00, (command))
 /* Write data */
@@ -44,9 +41,9 @@ uint8_t  SH1106_Init(void) {
 	alt_avalon_i2c_master_target_set(SH1106_I2C,SH1106_I2C_ADDR);
 
 	/* A little delay */
-	uint32_t p = 2500;
-	while(p>0)
-		p--;
+//	uint32_t p = 2500;
+//	while(p>0)
+//		p--;
 
 	  // Initialize the display
 	SH1106_WRITECOMMAND(0xAE); //display off

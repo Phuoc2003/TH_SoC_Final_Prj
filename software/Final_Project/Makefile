@@ -145,6 +145,7 @@ ELF := Final_Project.elf
 C_SRCS += SH1106.c
 C_SRCS += fonts.c
 C_SRCS += source.c
+C_SRCS += DS1307.c
 CXX_SRCS :=
 ASM_SRCS :=
 
