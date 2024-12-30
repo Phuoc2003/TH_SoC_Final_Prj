@@ -83,26 +83,25 @@ void AHT20_Read()
 
 int main()
 {
-	char buffer[16];
+	char buffer[100];
 	uint32_t nguyen;
 	uint32_t thapphan;
 	I2C0_Init();
-	SH1106_Init (); // initialise the display
+//	SH1106_Init (); // initialise the display
 	const char *DAYS_OF_WEEK[7] = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
 		/* Start DS1307 timing. Pass user I2C handle pointer to function. */
 	DS1307_Init();
-		/* To test leap year correction. */
+
 	DS1307_SetTimeZone(+8, 00);
-	DS1307_SetDate(29);
-	DS1307_SetMonth(2);
+	DS1307_SetDate(1);
+	DS1307_SetMonth(12);
 	DS1307_SetYear(2024);
-	DS1307_SetDayOfWeek(4);
-	DS1307_SetHour(23);
-	DS1307_SetMinute(59);
-	DS1307_SetSecond(30);
+	DS1307_SetDayOfWeek(3);
+	DS1307_SetHour(9);
+	DS1307_SetMinute(15);
+	DS1307_SetSecond(0);
 	  while (1)
 	  {
-		  usleep(5000000);
 		  AHT20_Read();
 		  printf("\nTemp: %d, Humid: %d", (int)Temp, (int)Humid);
 
@@ -117,9 +116,30 @@ int main()
 		  nguyen = Humid / 100;
 		  thapphan = (uint32_t)Humid % 100;
 		  sprintf(buffer, "Humidity: %d.%02d", nguyen, thapphan);
-		  SH1106_GotoXY(12, 15);
+		  SH1106_GotoXY(12, 10);
 		  SH1106_Puts(buffer, &Font_7x10, 1);
+
+		  uint8_t dow = DS1307_GetDayOfWeek();
+		  sprintf(buffer, "%s", DAYS_OF_WEEK[dow]);
+		  SH1106_GotoXY(12, 20);
+		  SH1106_Puts(buffer, &Font_7x10, 1);
+
+		  uint8_t date = DS1307_GetDate();
+		  uint8_t month = DS1307_GetMonth();
+		  uint16_t year = DS1307_GetYear();
+		  sprintf(buffer, "%02d/%02d/%04d", date, month, year);
+		  SH1106_GotoXY(12, 30);
+		  SH1106_Puts(buffer, &Font_7x10, 1);
+
+		  uint8_t hour = DS1307_GetHour();
+		  uint8_t minute = DS1307_GetMinute();
+		  uint8_t second = DS1307_GetSecond();
+		  sprintf(buffer, "%02d:%02d:%02d", hour, minute, second);
+		  SH1106_GotoXY(12, 40);
+		  SH1106_Puts(buffer, &Font_7x10, 1);
+
 		  SH1106_UpdateScreen();
+		  usleep(250000);
 	  }
 
 
