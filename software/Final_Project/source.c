@@ -87,21 +87,26 @@ int main()
 	uint32_t nguyen;
 	uint32_t thapphan;
 	I2C0_Init();
-//	SH1106_Init (); // initialise the display
-	const char *DAYS_OF_WEEK[7] = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
-		/* Start DS1307 timing. Pass user I2C handle pointer to function. */
+	SH1106_Init (); // initialise the display
 	DS1307_Init();
 
+	const char *DAYS_OF_WEEK[7] = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
+		/* Start DS1307 timing. Pass user I2C handle pointer to function. */
+
 	DS1307_SetTimeZone(+8, 00);
-	DS1307_SetDate(1);
+
+	DS1307_SetDayOfWeek(3);
+
+	DS1307_SetDate(31);
 	DS1307_SetMonth(12);
 	DS1307_SetYear(2024);
-	DS1307_SetDayOfWeek(3);
+
 	DS1307_SetHour(9);
 	DS1307_SetMinute(15);
 	DS1307_SetSecond(0);
-	  while (1)
-	  {
+
+	while (1)
+	{
 		  AHT20_Read();
 		  printf("\nTemp: %d, Humid: %d", (int)Temp, (int)Humid);
 
@@ -141,8 +146,5 @@ int main()
 		  SH1106_UpdateScreen();
 		  usleep(250000);
 	  }
-
-
-
 	return 1;
 }
